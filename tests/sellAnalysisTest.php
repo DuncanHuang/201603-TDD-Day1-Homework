@@ -6,7 +6,6 @@
  * Date: 2016/3/5
  * Time: 下午9:32
  */
-include_once __DIR__ . '/../app/sellAnalysis.php';
 
 class sellAnalysisTest extends PHPUnit_Framework_TestCase
 {
