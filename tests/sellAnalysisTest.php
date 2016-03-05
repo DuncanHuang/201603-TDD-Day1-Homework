@@ -18,10 +18,10 @@ class sellAnalysisTest extends PHPUnit_Framework_TestCase
         // Act
         $rowsGroup = 3;
         $groupName = 'Cost';
-        $target = $analysis->analysis($rowsGroup, $groupName);
+        $target    = $analysis->analysis($rowsGroup, $groupName);
 
         // Assert
-        $this->assertCount(4, $target);
+        $this->assertCount((int) ceil($analysis->getRows() / $rowsGroup), $target);
         $this->assertEquals(6, $target[0]);
         $this->assertEquals(15, $target[1]);
         $this->assertEquals(24, $target[2]);
@@ -36,10 +36,10 @@ class sellAnalysisTest extends PHPUnit_Framework_TestCase
         // Act
         $rowsGroup = 4;
         $groupName = 'Revenue';
-        $target = $analysis->analysis($rowsGroup, $groupName);
+        $target    = $analysis->analysis($rowsGroup, $groupName);
 
         // Assert
-        $this->assertCount(3, $target);
+        $this->assertCount((int) ceil($analysis->getRows() / $rowsGroup), $target);
         $this->assertEquals(50, $target[0]);
         $this->assertEquals(66, $target[1]);
         $this->assertEquals(60, $target[2]);
