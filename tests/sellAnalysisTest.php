@@ -28,8 +28,20 @@ class sellAnalysisTest extends PHPUnit_Framework_TestCase
         $this->assertEquals(21, $target[3]);
     }
 
-    public function fourRowsGroup_cal_sumRevenue()
+    public function test_fourRowsGroup_cal_sumRevenue()
     {
+        // Arrange
+        $analysis = new \homework\sellAnalysis();
 
+        // Act
+        $rowsGroup = 4;
+        $groupName = 'Revenue';
+        $target = $analysis->analysis($rowsGroup, $groupName);
+
+        // Assert
+        $this->assertCount(3, $target);
+        $this->assertEquals(50, $target[0]);
+        $this->assertEquals(66, $target[1]);
+        $this->assertEquals(60, $target[2]);
     }
 }
