@@ -35,6 +35,20 @@ class sellAnalysis
 
     public function analysis($rowsGroup, $groupName)
     {
-        return array(6, 15, 24, 21);
+        $data = $this->getData();
+
+        $chunk = array_chunk($data, $rowsGroup);
+
+        $sum = array();
+        foreach ($chunk as $groupKey => $groupItem) {
+            foreach ($groupItem as $item) {
+                if (isset($sum[$groupKey]) == false) {
+                    $sum[$groupKey] = 0;
+                }
+                $sum[$groupKey] += $item[$groupName];
+            }
+        }
+
+        return $sum;
     }
 }
