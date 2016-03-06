@@ -36,14 +36,13 @@ class sellAnalysisTest extends PHPUnit_Framework_TestCase
         $rowsGroup = 3;
         $groupName = 'Cost';
         $groupNum  = 4;
-        $target    = $analysis->analysis($this->getData(), $rowsGroup, $groupName);
+        $package   = array(6, 15, 24, 21);
+
+        $target = $analysis->analysis($this->getData(), $rowsGroup, $groupName);
 
         // Assert
         $this->assertCount($groupNum, $target);
-        $this->assertEquals(6, $target[0]);
-        $this->assertEquals(15, $target[1]);
-        $this->assertEquals(24, $target[2]);
-        $this->assertEquals(21, $target[3]);
+        $this->assertEquals($package, $target);
     }
 
     public function test_fourRowsGroup_cal_sumRevenue()
@@ -55,12 +54,11 @@ class sellAnalysisTest extends PHPUnit_Framework_TestCase
         $rowsGroup = 4;
         $groupName = 'Revenue';
         $groupNum  = 3;
+        $package   = array(50, 66, 60);
         $target    = $analysis->analysis($this->getData(), $rowsGroup, $groupName);
 
         // Assert
         $this->assertCount($groupNum, $target);
-        $this->assertEquals(50, $target[0]);
-        $this->assertEquals(66, $target[1]);
-        $this->assertEquals(60, $target[2]);
+        $this->assertEquals($package, $target);
     }
 }
