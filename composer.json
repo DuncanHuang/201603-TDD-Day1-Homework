@@ -6,7 +6,8 @@
     "phpunit/phpunit": "~5.1",
     "guzzlehttp/guzzle": "~6.0",
     "mockery/mockery": "0.9.*",
-    "phpspec/prophecy": "~1.0"
+    "phpspec/prophecy": "~1.0",
+    "mdarse/phpunit-notifier": "^1.0"
   },
   "autoload": {
     "psr-4": {
@@ -17,4 +18,3 @@
     "preferred-install": "dist"
   }
 }
-
